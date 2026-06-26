@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZÈFIRO | Armonie Eteree</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond per i titoli (Serif di lusso) e Montserrat per il testo (Sans-Serif pulito) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        calcare: '#F4F4F0',
+                        pinomarittimo: '#2E5A44',
+                        bergamotto: '#EEDC82',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar stile editoriale */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F4F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2E5A44;
+            border-radius: 3px;
+        }
+        
+        /* Stile aggiuntivo per rendere i video fluidi e garantire l'aspetto opaco dello sfondo */
+        body {
+            background-color: #F4F4F0;
+            color: #2E5A44;
+            overflow-x: hidden;
+        }
+        
+        .backdrop-blur-luxury {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-pinomarittimo selection:text-calcare">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-luxury border-b border-pinomarittimo/10 bg-calcare/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl tracking-widest font-semibold text-pinomarittimo hover:opacity-80 transition-opacity">
+                ARMONIE ETEREE
+            </a>
+            <nav class="hidden md:flex space-x-8 text-xs tracking-widest uppercase font-medium">
+                <a href="#manifesto" class="hover:text-pinomarittimo/70 transition-colors">Il Manifesto</a>
+                <a href="#esperienza" class="hover:text-pinomarittimo/70 transition-colors">L'Esperienza</a>
+                <a href="#fluidita" class="hover:text-pinomarittimo/70 transition-colors">Identità</a>
+                <a href="#acquista" class="px-3 py-1 bg-pinomarittimo text-calcare hover:bg-pinomarittimo/90 transition-all duration-300 rounded">Acquista</a>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden flex flex-col justify-between h-4 w-6 text-pinomarittimo focus:outline-none" id="mobile-menu-btn">
+                <span class="h-[1.5px] w-full bg-pinomarittimo transition-all"></span>
+                <span class="h-[1.5px] w-full bg-pinomarittimo transition-all"></span>
+            </button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-calcare w-full border-b border-pinomarittimo/10 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-xs tracking-widest uppercase font-medium">
+                <a href="#manifesto" class="mobile-link py-2 hover:text-pinomarittimo/70">Il Manifesto</a>
+                <a href="#esperienza" class="mobile-link py-2 hover:text-pinomarittimo/70">L'Esperienza</a>
+                <a href="#fluidita" class="mobile-link py-2 hover:text-pinomarittimo/70">Identità</a>
+                <a href="#acquista" class="mobile-link py-3 bg-pinomarittimo text-calcare text-center rounded">Acquista</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEZIONE 1: Hero Page (Above the Fold) -->
+    <section class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-calcare">
+        <!-- Background Video in Loop -->
+        <div class="absolute inset-0 w-full h-full z-0 select-none pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-b from-calcare/40 via-transparent to-calcare/80 z-10"></div>
+            <video class="w-full h-full object-cover opacity-85" autoplay loop muted playsinline>
+                <source src="sequenza1.mp4" type="video/mp4">
+                <!-- Fallback in caso di mancato caricamento del file locale -->
+                <p class="hidden">Il tuo browser non supporta i video HTML5.</p>
+            </video>
+        </div>
+
+        <!-- Overlay Content -->
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16">
+            <p class="font-sans text-xs tracking-[0.3em] uppercase mb-4 text-pinomarittimo opacity-90">Un'opera olfattiva d'autore</p>
+            <h1 class="font-serif text-7xl md:text-9xl tracking-[0.15em] font-light leading-none mb-6 text-pinomarittimo uppercase animate-fade-in">
+                ZÈFIRO
+            </h1>
+            <p class="font-serif italic text-lg md:text-2xl text-pinomarittimo/90 mb-10 max-w-xl mx-auto font-light leading-relaxed">
+                Il vento caldo e rigenerante dell'estate mediterranea catturato in un flacone.
+            </p>
+            <a href="#manifesto" class="inline-block px-8 py-4 bg-bergamotto hover:bg-pinomarittimo hover:text-calcare text-pinomarittimo text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-500 rounded-sm shadow-md hover:shadow-xl transform hover:-translate-y-1">
+                Scopri la Fragranza
+            </a>
+        </div>
+
+        <!-- Indicatore di scorrimento verso il basso -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center">
+            <span class="text-[9px] tracking-[0.2em] uppercase text-pinomarittimo/60 mb-2">Scorri</span>
+            <div class="w-[1px] h-12 bg-pinomarittimo/30 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-pinomarittimo animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE 2: Brand Manifesto & Articolo (Layout Editoriale Asimmetrico) -->
+    <section id="manifesto" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto bg-calcare">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            <!-- Colonna Sinistra: Articolo Editoriale Completo -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="space-y-4">
+                    <span class="text-xs tracking-[0.25em] uppercase font-semibold text-pinomarittimo/80 block">L'Incontro Editoriale</span>
+                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-pinomarittimo font-light leading-tight">
+                        Il soffio dell'autenticità:<br>
+                        <span class="italic font-normal">Armonie Eteree presenta Zèfiro</span>
+                    </h2>
+                </div>
+                
+                <div class="border-t border-pinomarittimo/20 pt-8">
+                    <!-- Articolo originale fornito -->
+                    <p class="font-sans text-sm md:text-base text-pinomarittimo/95 leading-relaxed text-justify mb-6 font-light">
+                        Nel panorama della profumeria artistica contemporanea, il brand <span class="font-semibold">Armonie Eteree</span> ridefinisce il concetto di fragranza d’autore con il lancio di <span class="font-semibold">Zèfiro</span>, un profumo unisex che si fa manifesto di una connessione ancestrale con la natura mediterranea. Ispirato al vento caldo e rigenerante dell'estate, Zèfiro rompe i confini di genere per celebrare una bellezza fluida, universale e profondamente legata alla terra d'origine.
+                    </p>
+                    <p class="font-sans text-sm md:text-base text-pinomarittimo/95 leading-relaxed text-justify mb-6 font-light">
+                        La filosofia del brand non ammette compromessi: la piramide olfattiva è composta esclusivamente da <span class="font-semibold">oli essenziali 100% organici</span> estratti nel bacino del Mediterraneo. L'apertura è un'esplosione di freschezza agrumata che evoca i limoneti a picco sul mare; il cuore svela la forza balsamica e fiera del pino marittimo, per poi sfumare in un fondo di delicate fioriture estive spontanee.
+                    </p>
+                    <blockquote class="border-l-2 border-pinomarittimo pl-6 py-2 my-8">
+                        <p class="font-serif italic text-lg md:text-xl text-pinomarittimo/80 leading-relaxed">
+                            "Zèfiro non è semplicemente una fragranza, ma un’esperienza multisensoriale che si deposita nella memoria emotiva, trasformando il profumo in un rituale quotidiano di pura evasione."
+                        </p>
+                    </blockquote>
+                    <p class="font-sans text-sm md:text-base text-pinomarittimo/95 leading-relaxed text-justify font-light">
+                        La campagna visiva, sviluppata in un formato verticale dal forte impatto editoriale, traduce questa sinfonia olfattiva in immagini pure, dove il flacone emerge tra rocce calcaree e scorzi di pelle accarezzati dal vento. Un invito a riscoprire l'essenza più nuda e sincera del proprio essere.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Colonna Destra: Still Life (Scatto 1) -->
+            <div class="lg:col-span-5 w-full flex justify-center">
+                <div class="relative group max-w-md lg:max-w-full w-full">
+                    <!-- Sfondo decorativo geometrico asimmetrico -->
+                    <div class="absolute -inset-4 bg-pinomarittimo/5 rounded-lg -rotate-1 group-hover:rotate-0 transition-transform duration-700"></div>
+                    <!-- Immagine Principale -->
+                    <div class="relative bg-calcare border border-pinomarittimo/10 p-3 rounded-sm shadow-xl overflow-hidden">
+                        <img src="scatto1.png" alt="Zèfiro Still Life - Scatto 1" class="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.03] transition-transform duration-700 rounded-sm">
+                        <div class="mt-4 flex justify-between items-center px-2">
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-pinomarittimo/50">Still Life I (Botanico)</span>
+                            <span class="text-xs font-serif italic text-pinomarittimo/75">Bergamotto & Pino Marittimo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE 3: L'Esperienza Olfattiva - Il Vento sulla Pelle -->
+    <section id="esperienza" class="py-24 bg-[#EBEBE6] border-t border-b border-pinomarittimo/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs tracking-[0.25em] uppercase font-semibold text-pinomarittimo/80 block mb-2">L'esperienza Sensoriale</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-pinomarittimo font-light">Il Vento sulla Pelle</h2>
+                <div class="w-16 h-[1px] bg-pinomarittimo/40 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Griglia Alternata ad alto impatto visivo -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Sinistra: Scatto 2 -->
+                <div class="w-full relative overflow-hidden group rounded-sm shadow-lg border border-pinomarittimo/10 bg-calcare p-2">
+                    <img src="scatto2.png" alt="Il Vento sulla Pelle - Scatto 2" class="w-full h-[500px] object-cover rounded-sm filter brightness-95 group-hover:brightness-100 transition-all duration-700">
+                    <div class="absolute bottom-6 left-6 right-6 bg-calcare/90 p-4 rounded-sm backdrop-blur-md border border-pinomarittimo/5">
+                        <p class="font-serif text-sm italic text-pinomarittimo">"Istantanee tattili in un soffio leggero."</p>
+                    </div>
+                </div>
+
+                <!-- Destra: Sequenza Video 2 -->
+                <div class="w-full relative overflow-hidden group rounded-sm shadow-lg border border-pinomarittimo/10 bg-calcare p-2">
+                    <video class="w-full h-[500px] object-cover rounded-sm filter brightness-95" autoplay loop muted playsinline>
+                        <source src="sequenza2.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute bottom-6 left-6 right-6 bg-pinomarittimo/95 p-4 rounded-sm border border-calcare/10 text-calcare">
+                        <p class="font-serif text-sm italic">"Il moto perpetuo delle fronde marine."</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Nota Descrittiva minimale inferiore -->
+            <div class="mt-16 text-center max-w-xl mx-auto">
+                <p class="font-sans text-xs tracking-[0.15em] text-pinomarittimo/60 uppercase mb-3">Le Note Olfattive Centrali</p>
+                <p class="font-serif text-lg md:text-xl text-pinomarittimo leading-relaxed font-light italic">
+                    Un cuore balsamico puro che palpita di Pino Marittimo e resine selvatiche, evocando la forza fiera degli alberi piegati dal vento salmastro del Mediterraneo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE 4: Fluidità e Identità (Sezione Full-Width) -->
+    <section id="fluidita" class="relative min-h-[75vh] md:min-h-screen w-full flex items-center justify-center bg-black overflow-hidden">
+        <!-- Video a Schermo Intero in riproduzione automatica -->
+        <div class="absolute inset-0 w-full h-full z-0 select-none pointer-events-none">
+            <div class="absolute inset-0 bg-pinomarittimo/20 mix-blend-multiply z-10"></div>
+            <!-- Gradiente scuro di contrasto per i testi -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/60 z-10"></div>
+            <video class="w-full h-full object-cover opacity-75" autoplay loop muted playsinline>
+                <source src="sequenza3.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Overlay Text per Identità Unisex -->
+        <div class="relative z-20 text-center max-w-3xl px-6 py-12">
+            <span class="text-xs tracking-[0.3em] uppercase text-bergamotto font-medium block mb-4">Fluidità & Identità</span>
+            <h2 class="font-serif text-4xl md:text-6xl text-calcare font-light tracking-wide leading-tight mb-8">
+                Oltre i generi,<br><span class="italic font-normal">l'incontro degli opposti</span>
+            </h2>
+            <p class="font-sans text-xs md:text-sm text-calcare/80 leading-relaxed max-w-xl mx-auto tracking-wider font-light">
+                Zèfiro annulla i codici tradizionali della profumeria. Lo sguardo della modella che attraversa l'obiettivo è un richiamo alla verità interiore: un lusso essenziale che non impone ruoli, ma asseconda il calore naturale di ogni pelle.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEZIONE 5: Conversione & E-Commerce -->
+    <section id="acquista" class="bg-pinomarittimo text-calcare py-24 px-6 md:px-12 border-t border-calcare/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Colonna Sinistra: Scatto 3 (Flacone/Still Life d'Acquisto) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative max-w-md w-full">
+                        <!-- Effetto alone dorato soffuso di sfondo -->
+                        <div class="absolute inset-0 bg-bergamotto/10 blur-[100px] rounded-full"></div>
+                        
+                        <div class="relative bg-pinomarittimo border border-calcare/15 p-4 rounded-sm shadow-2xl">
+                            <img src="scatto3.png" alt="Zèfiro Flacone Elegance - Scatto 3" class="w-full h-auto object-cover rounded-sm filter brightness-105">
+                            <div class="absolute top-6 right-6 bg-bergamotto text-pinomarittimo font-semibold text-[10px] tracking-widest uppercase py-1.5 px-3 rounded-full shadow-lg">
+                                100% Organico
+                            </div>
+                            <div class="mt-4 text-center">
+                                <span class="font-serif text-xs italic text-calcare/60">Zèfiro Eau de Parfum – Edizione Editoriale</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonna Destra: Modulo Acquisto e Selettori -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-xs tracking-[0.25em] uppercase text-bergamotto font-semibold block">Il Tuo Rituale Quotidiano</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-light tracking-wide">Acquista l'Estasi di Zèfiro</h2>
+                        <p class="font-sans text-sm text-calcare/70 font-light max-w-xl leading-relaxed">
+                            Ogni flacone racchiude unicamente pura materia prima biologica distillata nel Mediterraneo, sigillata a mano in vetro minimalista riciclabile.
+                        </p>
+                    </div>
+
+                    <!-- Lista Ingredienti Organici Certificati -->
+                    <div class="bg-black/10 p-6 rounded border border-calcare/5 space-y-3">
+                        <h4 class="text-xs tracking-widest uppercase text-bergamotto font-semibold">Ingredienti 100% Certificati</h4>
+                        <p class="text-xs leading-relaxed text-calcare/80 font-light">
+                            Alcohol* (estratto da grano biologico), Parfum** (miscela esclusiva di oli essenziali biologici), Citrus Bergamia Peel Oil*, Pinus Pinaster Leaf Extract*, Limonene**, Linalool**, Citral**. <br>
+                            <span class="text-[10px] italic text-calcare/50">*da agricoltura biologica certificata | **da oli essenziali naturali puri al 100%.</span>
+                        </p>
+                    </div>
+
+                    <!-- Selettore Formato Bottiglia -->
+                    <div class="space-y-4">
+                        <span class="text-xs tracking-widest uppercase font-semibold text-calcare/80 block">Seleziona Formato</span>
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- 50 ml -->
+                            <button onclick="selectFormat('50ml', 110)" id="btn-50ml" class="format-btn border border-calcare/30 hover:border-bergamotto py-4 px-2 text-center rounded transition-all duration-300 bg-pinomarittimo hover:bg-black/20">
+                                <span class="block font-serif text-lg font-bold">50 ml</span>
+                                <span class="block text-[10px] text-calcare/60 uppercase tracking-wider mt-1">Viaggio Olfattivo</span>
+                                <span class="block text-sm text-bergamotto font-semibold mt-2">€ 110,00</span>
+                            </button>
+                            <!-- 100 ml (Default) -->
+                            <button onclick="selectFormat('100ml', 175)" id="btn-100ml" class="format-btn border-2 border-bergamotto py-4 px-2 text-center rounded transition-all duration-300 bg-black/30 relative">
+                                <span class="absolute -top-2.5 left-1/2 transform -translate-x-1/2 bg-bergamotto text-pinomarittimo font-semibold text-[8px] tracking-widest uppercase px-2 py-0.5 rounded-full">Ideale</span>
+                                <span class="block font-serif text-lg font-bold">100 ml</span>
+                                <span class="block text-[10px] text-calcare/60 uppercase tracking-wider mt-1">L'Incontro Puro</span>
+                                <span class="block text-sm text-bergamotto font-semibold mt-2">€ 175,00</span>
+                            </button>
+                            <!-- 250 ml Art Edition -->
+                            <button onclick="selectFormat('250ml', 340)" id="btn-250ml" class="format-btn border border-calcare/30 hover:border-bergamotto py-4 px-2 text-center rounded transition-all duration-300 bg-pinomarittimo hover:bg-black/20">
+                                <span class="block font-serif text-lg font-bold">250 ml</span>
+                                <span class="block text-[10px] text-calcare/60 uppercase tracking-wider mt-1">Collezione Arte</span>
+                                <span class="block text-sm text-bergamotto font-semibold mt-2">€ 340,00</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bottone CTA d'Acquisto -->
+                    <div class="pt-4">
+                        <button onclick="triggerPurchase()" class="w-full py-5 bg-bergamotto text-pinomarittimo hover:bg-calcare hover:scale-[1.01] transition-all duration-300 font-sans text-xs tracking-[0.25em] uppercase font-bold rounded shadow-lg flex items-center justify-center space-x-3">
+                            <span>Acquista l'Estasi di Zèfiro</span>
+                            <span id="price-display" class="font-serif italic text-sm font-semibold border-l border-pinomarittimo/30 pl-3">€ 175,00</span>
+                        </button>
+                        <div class="flex justify-between items-center mt-4 text-[11px] text-calcare/60 px-1">
+                            <span>Spedizione Gratuita Express in tutta Italia</span>
+                            <span>Confezione Regalo Sostenibile Inclusa</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Editoriale -->
+    <footer class="bg-[#1D3E2F] text-calcare/70 py-12 px-6 border-t border-calcare/5 text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h3 class="font-serif text-xl tracking-widest text-calcare">ARMONIE ETEREE</h3>
+            <p class="font-sans text-xs tracking-wider max-w-md mx-auto leading-relaxed">
+                Naso Profumiere & Filosofia Botanica Mediterranea. Tutti i diritti riservati &copy; 2026.
+            </p>
+            <div class="flex justify-center space-x-6 text-xs tracking-widest uppercase pt-2">
+                <a href="#" class="hover:text-bergamotto transition-colors">Privacy</a>
+                <a href="#" class="hover:text-bergamotto transition-colors">Termini d'Acquisto</a>
+                <a href="#" class="hover:text-bergamotto transition-colors">Contatti</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modale Custom di Notifica Acquisto (Sostituto di alert browser) -->
+    <div id="purchase-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/60 backdrop-blur-sm px-4">
+        <div class="bg-calcare text-pinomarittimo p-8 md:p-12 rounded-sm shadow-2xl max-w-md w-full border border-pinomarittimo/20 text-center relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-pinomarittimo/60 hover:text-pinomarittimo text-xl">&times;</button>
+            <div class="w-16 h-16 bg-pinomarittimo/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <!-- Icona Spiga/Natura minimalista in SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pinomarittimo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+            </div>
+            <h3 class="font-serif text-3xl mb-3 text-pinomarittimo tracking-wide">Rituale Avviato</h3>
+            <p class="font-sans text-sm text-pinomarittimo/80 leading-relaxed mb-6 font-light">
+                Hai selezionato l'Edizione Editoriale di <strong class="font-semibold">Zèfiro (<span id="selected-modal-format">100ml</span>)</strong>.<br>
+                Ti stiamo reindirizzando al completamento sicuro dell'ordine.
+            </p>
+            <button onclick="closeModal()" class="w-full py-3 bg-pinomarittimo text-calcare hover:bg-pinomarittimo/90 text-xs tracking-widest uppercase font-semibold transition-colors duration-300 rounded-sm">
+                Prosegui l'Esperienza
+            </button>
+        </div>
+    </div>
+
+    <!-- Script Logica Selezione Formato e Modali -->
+    <script>
+        // Stato dell'acquisto selezionato
+        let currentFormat = '100ml';
+        let currentPrice = 175;
+
+        // Gestione Selezione Formato
+        function selectFormat(format, price) {
+            currentFormat = format;
+            currentPrice = price;
+
+            // Aggiorna l'indicatore di prezzo sul bottone principale
+            document.getElementById('price-display').textContent = `€ ${price},00`;
+
+            // Reset classi bottoni
+            const buttons = document.querySelectorAll('.format-btn');
+            buttons.forEach(btn => {
+                btn.className = "format-btn border border-calcare/30 hover:border-bergamotto py-4 px-2 text-center rounded transition-all duration-300 bg-pinomarittimo hover:bg-black/20";
+                
+                // Rimuovi eventuali badge indicatori supplementari inseriti dinamicamente
+                const badge = btn.querySelector('.added-badge');
+                if (badge) badge.remove();
+            });
+
+            // Evidenzia il bottone selezionato
+            const activeBtn = document.getElementById(`btn-${format}`);
+            activeBtn.className = "format-btn border-2 border-bergamotto py-4 px-2 text-center rounded transition-all duration-300 bg-black/30 relative";
+        }
+
+        // Trigger Notifica d'Acquisto Custom
+        function triggerPurchase() {
+            document.getElementById('selected-modal-format').textContent = currentFormat;
+            const modal = document.getElementById('purchase-modal');
+            modal.classList.remove('hidden');
+        }
+
+        // Chiusura Modale Custom
+        function closeModal() {
+            const modal = document.getElementById('purchase-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Gestione Menu Mobile di Navigazione
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

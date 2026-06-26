@@ -1882,54 +1882,28 @@ button {
     }
 }
 
-/* BRAINROT PAGE SIDE-BY-SIDE LAYOUT */
-.brainrot-layout-container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
-    margin-top: 2rem;
-    align-items: stretch;
-}
-
-.brainrot-text-col {
-    font-size: 1.125rem;
-    line-height: 1.7;
+/* BRAINROT PAGE LAYOUT (CENTERED IMAGE UNDER TEXT) */
+.brainrot-visual-container {
     display: flex;
     flex-direction: column;
-}
-
-.brainrot-text-col p {
-    margin-bottom: 1.5rem;
-}
-
-.brainrot-visual-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Align bottom edges with PDF button */
     align-items: center;
     width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
 }
 
-.brainrot-visual-col .showcase-image-container {
-    max-width: 520px;
+.brainrot-visual-container .showcase-image-container {
     width: 100%;
+    max-width: 900px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
 }
 
 .brainrot-btn-wrapper {
-    margin-top: auto; /* Push PDF button to the bottom */
-    padding-top: 2rem;
-}
-
-@media (max-width: 900px) {
-    .brainrot-layout-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    .brainrot-visual-col {
-        justify-content: center;
-    }
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 /* DORICA PAGE BRAND STRATEGY PILLARS GRID */

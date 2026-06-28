@@ -1978,3 +1978,102 @@ button {
     border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
 }
+
+/* SECURITY: Prevent image selection, copying and mobile touch callouts */
+img {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* RESPONSIVE FONT SIZES FOR MOBILE (<=768px) */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem !important;
+    }
+    
+    .hero-subtitle-gradient {
+        font-size: 1.4rem !important;
+    }
+    
+    .page-title {
+        font-size: 2rem !important;
+    }
+    
+    #page-yuka .page-title,
+    #page-dorica .page-title {
+        font-size: 1.7rem !important;
+    }
+    
+    .section-lead {
+        font-size: 1.05rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .showcase-text h3 {
+        font-size: 1.4rem !important;
+    }
+    
+    .article-title {
+        font-size: 2rem !important;
+    }
+    
+    .article-subtitle {
+        font-size: 1.05rem !important;
+    }
+    
+    /* Global mobile scale */
+    body, p, li {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* SMALLER SCREEN TYPOGRAPHY (<=480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .hero-subtitle-gradient {
+        font-size: 1.2rem !important;
+    }
+    
+    .page-title {
+        font-size: 1.6rem !important;
+    }
+    
+    #page-yuka .page-title,
+    #page-dorica .page-title {
+        font-size: 1.4rem !important;
+    }
+    
+    .section-lead {
+        font-size: 0.95rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.4rem !important;
+    }
+    
+    .showcase-text h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .article-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .article-subtitle {
+        font-size: 0.95rem !important;
+    }
+    
+    body, p, li {
+        font-size: 0.85rem !important;
+    }
+}
